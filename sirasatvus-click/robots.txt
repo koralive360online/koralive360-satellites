@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koralive360online.github.io/sirasatvus-click/sitemap.xml
