@@ -12,143 +12,147 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #dc2626;
-            --primary-dark: #991b1b;
-            --accent: #f87171;
-            --bg: #0f0808;
-            --surface: #1a1010;
-            --surface-hover: rgba(255, 255, 255, 0.04);
-            --border: #381a1a;
+            --bg: #0b0f17;
+            --surface: #131822;
+            --surface-card: #171f2c;
+            --surface-hover: #1c2637;
+            --border: #212c3d;
+            --border-light: #2b394f;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --live-red: #e11d48;
+            --live-bg: rgba(225, 29, 72, 0.12);
             --text: #f8fafc;
-            --text-dim: #94a3b8;
-            --card-radius: 14px;
-            --btn-radius: 8px;
-            --live-red: #ef4444;
-            --font-main: 'Cairo', -apple-system, sans-serif;
+            --text-muted: #94a3b8;
+            --text-subtle: #64748b;
+            --font-main: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --card-radius: 10px;
+            --btn-radius: 6px;
         }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: var(--font-main); }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:var(--font-main); }
         body { background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; overflow-x:hidden; direction:rtl; }
         a { text-decoration:none; color:inherit; }
-        
-        /* HEADER */
-        header { background:var(--surface); border-bottom:1px solid var(--border); padding:0.9rem 1.5rem; position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); }
+
+        /* HEADER - SLEEK & PROFESSIONAL */
+        header { background:var(--surface); border-bottom:1px solid var(--border); padding:0.85rem 1.5rem; position:sticky; top:0; z-index:100; }
         .header-wrap { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
         .logo { display:flex; align-items:center; gap:0.75rem; }
-        .logo-icon { background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff; width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:12px; font-weight:900; font-size:1.3rem; box-shadow:0 4px 15px rgba(0,0,0,0.3); }
+        .logo-icon { background:#1e293b; color:#38bdf8; width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:10px; font-weight:900; font-size:1.25rem; border:1px solid var(--border-light); }
         .logo-text { display:flex; flex-direction:column; }
-        .logo-title { font-size:1.45rem; font-weight:900; color:#fff; line-height:1.2; margin:0; }
-        .logo-sub { font-size:0.75rem; color:var(--text-dim); font-weight:600; }
+        .logo-title { font-size:1.4rem; font-weight:800; color:#fff; line-height:1.2; margin:0; }
+        .logo-sub { font-size:0.75rem; color:var(--text-muted); font-weight:500; }
         .header-badges { display:flex; align-items:center; gap:8px; }
-        .live-count-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(239, 68, 68, 0.15); border:1px solid rgba(239, 68, 68, 0.4); color:#fca5a5; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:99px; }
-        .badge-dot { width:7px; height:7px; background:var(--live-red); border-radius:50%; animation:pulse-dot 1.2s infinite; }
-        @keyframes pulse-dot { 0%, 100% { opacity:1; transform:scale(1); } 50% { opacity:0.3; transform:scale(0.7); } }
-        .nav-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
-        .kw-link { background:rgba(255,255,255,0.04); color:var(--text); padding:0.4rem 0.9rem; border-radius:6px; font-size:0.85rem; font-weight:700; transition:0.2s; border:1px solid var(--border); }
-        .kw-link:hover { background:var(--primary); color:#fff; border-color:var(--primary); transform:translateY(-1px); }
+        .live-count-badge { display:inline-flex; align-items:center; gap:6px; background:var(--live-bg); border:1px solid rgba(225, 29, 72, 0.3); color:#fb7185; font-size:0.8rem; font-weight:700; padding:3px 10px; border-radius:6px; }
+        .badge-dot { width:7px; height:7px; background:var(--live-red); border-radius:50%; }
+        .nav-links { display:flex; gap:0.4rem; flex-wrap:wrap; }
+        .kw-link { background:var(--surface-card); color:var(--text); padding:0.4rem 0.85rem; border-radius:6px; font-size:0.82rem; font-weight:600; border:1px solid var(--border); transition:0.15s ease; }
+        .kw-link:hover { background:var(--surface-hover); border-color:var(--border-light); color:#38bdf8; }
 
-        /* HERO STRIP */
-        .hero-strip { background:linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%); padding:0.6rem 1rem; color:#fff; font-size:0.85rem; font-weight:700; }
+        /* TOP NEWS STRIP */
+        .hero-strip { background:#0f172a; border-bottom:1px solid var(--border); padding:0.5rem 1rem; color:var(--text-muted); font-size:0.82rem; font-weight:600; }
         .hero-strip-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
 
-        .container { max-width:1200px; margin:1.5rem auto; padding:0 1rem; }
-        
-        /* HERO CARD */
-        .hero { background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.6)), var(--surface); border:1px solid var(--border); border-radius:18px; padding:2rem 1.5rem; margin-bottom:2rem; text-align:center; position:relative; overflow:hidden; }
-        .hero::before { content:''; position:absolute; top:-50%; right:-50%; width:100%; height:100%; background:radial-gradient(circle, var(--accent) 0%, transparent 60%); opacity:0.08; pointer-events:none; }
-        .hero h1 { font-size:clamp(1.5rem, 3.5vw, 2.2rem); font-weight:900; margin-bottom:0.8rem; color:#fff; line-height:1.3; }
-        .hero p { color:var(--text-dim); max-width:800px; margin:0 auto 1.5rem; font-size:0.95rem; line-height:1.7; }
-        
-        /* TABS */
-        .tabs { display:flex; justify-content:center; gap:0.6rem; margin-bottom:2rem; flex-wrap:wrap; }
-        .tab-btn { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:0.65rem 1.4rem; border-radius:var(--btn-radius); font-weight:800; font-size:0.95rem; transition:0.2s; display:inline-flex; align-items:center; gap:6px; }
-        .tab-btn.active, .tab-btn:hover { background:var(--primary); border-color:var(--primary); color:#fff; box-shadow:0 4px 15px rgba(0,0,0,0.3); }
+        .container { max-width:1200px; margin:1.25rem auto; padding:0 1rem; }
+
+        /* HERO CARD - CLEAN EDITORIAL BANNER */
+        .hero { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.75rem 1.5rem; margin-bottom:1.5rem; text-align:center; }
+        .hero h1 { font-size:clamp(1.4rem, 3vw, 1.9rem); font-weight:800; margin-bottom:0.6rem; color:#fff; line-height:1.3; }
+        .hero p { color:var(--text-muted); max-width:800px; margin:0 auto 1.25rem; font-size:0.92rem; line-height:1.7; }
+
+        /* DATE SELECTOR TABS - SOFASCORE STYLE */
+        .tabs { display:flex; justify-content:center; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+        .tab-btn { background:var(--surface); border:1px solid var(--border); color:var(--text-muted); padding:0.6rem 1.2rem; border-radius:8px; font-weight:700; font-size:0.88rem; transition:0.15s ease; display:inline-flex; align-items:center; gap:6px; }
+        .tab-btn:hover { background:var(--surface-hover); color:#fff; border-color:var(--border-light); }
+        .tab-btn.active { background:var(--primary); border-color:var(--primary); color:#fff; }
 
         /* MATCHES GRID */
-        .section-title { font-size:1.35rem; font-weight:900; margin-bottom:1.2rem; border-right:4px solid var(--primary); padding-right:0.75rem; color:#fff; display:flex; align-items:center; justify-content:space-between; }
-        .matches-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap:1.2rem; margin-bottom:2.5rem; }
-        .match-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--card-radius); padding:1.25rem; transition:0.2s; position:relative; display:flex; flex-direction:column; justify-content:space-between; }
-        .match-card:hover { transform:translateY(-3px); border-color:var(--primary); box-shadow:0 10px 30px rgba(0,0,0,0.4); }
+        .section-title { font-size:1.25rem; font-weight:800; margin-bottom:1rem; border-right:3px solid var(--primary); padding-right:0.65rem; color:#fff; display:flex; align-items:center; justify-content:space-between; }
+        .matches-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:1rem; margin-bottom:2.25rem; }
         
-        /* LIVE GLOW */
-        .match-card.live { border-color:rgba(239, 68, 68, 0.6); box-shadow:0 0 20px rgba(239, 68, 68, 0.15); }
-        .match-card.live::after { content:''; position:absolute; inset:0; border-radius:var(--card-radius); box-shadow:0 0 0 1px rgba(239, 68, 68, 0.35); pointer-events:none; animation:live-ring 1.8s infinite; }
-        @keyframes live-ring { 0%, 100% { box-shadow:0 0 0 1px rgba(239, 68, 68, 0.4); } 50% { box-shadow:0 0 0 4px rgba(239, 68, 68, 0.1); } }
+        /* MATCH CARD */
+        .match-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--card-radius); padding:1rem 1.15rem; transition:0.15s ease; position:relative; display:flex; flex-direction:column; justify-content:space-between; }
+        .match-card:hover { border-color:var(--border-light); background:var(--surface-card); }
+        
+        /* LIVE STATE - CLEAN RED STRIP */
+        .match-card.live { border-right:3px solid var(--live-red); background:#151821; }
 
-        .match-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.1rem; font-size:0.85rem; padding-bottom:0.6rem; border-bottom:1px solid rgba(255,255,255,0.05); }
-        .m-tourn { font-weight:700; color:var(--text-dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:65%; font-size:0.8rem; }
+        .match-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.9rem; font-size:0.82rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+        .m-tourn { font-weight:600; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:65%; font-size:0.78rem; }
         .m-badges { display:flex; align-items:center; gap:6px; }
-        .m-chan { font-size:0.75rem; color:var(--accent); font-weight:700; background:rgba(255,255,255,0.03); padding:2px 8px; border-radius:4px; }
-        .m-badge { padding:0.25rem 0.65rem; border-radius:99px; font-weight:800; font-size:0.75rem; display:inline-flex; align-items:center; gap:5px; }
-        .m-badge.live { background:rgba(239, 68, 68, 0.2); color:#fca5a5; border:1px solid rgba(239, 68, 68, 0.4); }
-        .m-badge.upcoming { background:rgba(255,255,255,0.05); color:var(--text-dim); border:1px solid var(--border); }
-        .m-badge.ended { background:rgba(0,0,0,0.3); color:#64748b; }
+        .m-chan { font-size:0.72rem; color:#cbd5e1; font-weight:600; background:rgba(255,255,255,0.05); padding:2px 6px; border-radius:4px; border:1px solid var(--border); }
+        .m-badge { padding:0.2rem 0.55rem; border-radius:4px; font-weight:700; font-size:0.72rem; display:inline-flex; align-items:center; gap:5px; }
+        .m-badge.live { background:var(--live-bg); color:#fb7185; border:1px solid rgba(225, 29, 72, 0.3); }
+        .m-badge.upcoming { background:rgba(255,255,255,0.04); color:var(--text-muted); border:1px solid var(--border); }
+        .m-badge.ended { background:rgba(0,0,0,0.25); color:var(--text-subtle); border:1px solid var(--border); }
 
-        .match-teams { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.3rem; gap:0.5rem; }
-        .team { flex:1; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
-        .team-logo-wrap { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,0.04); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; padding:6px; }
-        .team-img { width:42px; height:42px; object-fit:contain; }
-        .team-fallback { font-size:1.6rem; }
-        .team-name { font-weight:800; font-size:0.95rem; color:#fff; max-width:115px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-        
-        .match-center { flex:0 0 auto; min-width:85px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.3rem; }
-        .score-box { font-size:1.35rem; color:var(--accent); font-weight:900; background:rgba(0,0,0,0.4); padding:0.2rem 0.75rem; border-radius:6px; letter-spacing:2px; }
+        .match-teams { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; gap:0.5rem; }
+        .team { flex:1; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.4rem; }
+        .team-logo-wrap { width:48px; height:48px; border-radius:50%; background:#1a2230; border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; padding:5px; }
+        .team-img { width:36px; height:36px; object-fit:contain; }
+        .team-fallback { font-size:1.3rem; }
+        .team-name { font-weight:700; font-size:0.9rem; color:#fff; max-width:110px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+        .match-center { flex:0 0 auto; min-width:80px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.25rem; }
+        .score-box { font-size:1.3rem; color:#fff; font-weight:800; background:#0f172a; padding:0.2rem 0.7rem; border-radius:6px; letter-spacing:1px; border:1px solid var(--border); }
         .match-card.not-started .score-box { display:none; }
-        .time-box { font-size:0.85rem; color:var(--text-dim); font-weight:700; }
+        .time-box { font-size:0.82rem; color:var(--text-muted); font-weight:600; }
         .match-card.live .time-box { display:none; }
-        .rel-countdown { font-size:0.75rem; color:var(--primary); font-weight:800; }
+        .rel-countdown { font-size:0.72rem; color:#38bdf8; font-weight:700; }
 
-        .match-footer { border-top:1px solid rgba(255,255,255,0.05); padding-top:0.85rem; }
-        .watch-btn { display:flex; align-items:center; justify-content:center; width:100%; text-align:center; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff; padding:0.65rem 1rem; border-radius:var(--btn-radius); font-weight:800; font-size:0.88rem; transition:0.2s; box-shadow:0 3px 12px rgba(0,0,0,0.3); }
-        .watch-btn:hover { opacity:0.92; transform:translateY(-1px); }
-        .watch-btn.live-btn { background:linear-gradient(135deg, #ef4444, #dc2626); box-shadow:0 3px 15px rgba(239, 68, 68, 0.4); }
-        .watch-btn.ended-btn { background:rgba(255,255,255,0.06); color:var(--text-dim); border:1px solid var(--border); box-shadow:none; }
+        .match-footer { border-top:1px solid var(--border); padding-top:0.75rem; }
+        .watch-btn { display:flex; align-items:center; justify-content:center; width:100%; text-align:center; background:#1e293b; color:#f8fafc; padding:0.55rem 0.85rem; border-radius:6px; font-weight:700; font-size:0.82rem; transition:0.15s ease; border:1px solid var(--border-light); }
+        .watch-btn:hover { background:#334155; color:#fff; }
+        .watch-btn.live-btn { background:var(--live-red); color:#fff; border-color:var(--live-red); }
+        .watch-btn.live-btn:hover { background:#be123c; }
+        .watch-btn.ended-btn { background:transparent; color:var(--text-muted); border:1px solid var(--border); }
+        .watch-btn.ended-btn:hover { background:var(--surface-hover); color:#fff; }
 
-        /* TRUST BAR (LIKE YALLAX) */
-        .trust-bar { display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:0; background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:2.5rem; overflow:hidden; }
-        .trust-stat { padding:1.2rem 1rem; text-align:center; border-left:1px solid var(--border); display:flex; flex-direction:column; gap:4px; }
+        /* TRUST BAR - CLEAN SPORTS DATA */
+        .trust-bar { display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:0; background:var(--surface); border:1px solid var(--border); border-radius:10px; margin-bottom:2rem; overflow:hidden; }
+        .trust-stat { padding:1rem; text-align:center; border-left:1px solid var(--border); display:flex; flex-direction:column; gap:2px; }
         .trust-stat:first-child { border-left:none; }
-        .trust-num { font-size:1.55rem; font-weight:900; color:var(--primary); }
-        .trust-label { font-size:0.75rem; color:var(--text-dim); font-weight:700; }
+        .trust-num { font-size:1.4rem; font-weight:800; color:#38bdf8; }
+        .trust-label { font-size:0.72rem; color:var(--text-muted); font-weight:600; }
 
         /* LEAGUES QUICK GRID */
-        .leagues-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:0.85rem; margin-bottom:2.5rem; }
-        .league-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.85rem 1rem; display:flex; align-items:center; gap:0.75rem; transition:0.2s; }
-        .league-card:hover { border-color:var(--primary); background:var(--surface-hover); transform:translateY(-2px); }
-        .league-icon { font-size:1.4rem; }
+        .leagues-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem; }
+        .league-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:0.75rem 0.9rem; display:flex; align-items:center; gap:0.7rem; transition:0.15s ease; }
+        .league-card:hover { border-color:var(--border-light); background:var(--surface-card); }
+        .league-icon { font-size:1.3rem; }
         .league-info { display:flex; flex-direction:column; }
-        .league-name { font-weight:800; font-size:0.85rem; color:#fff; }
-        .league-sub { font-size:0.7rem; color:var(--text-dim); }
+        .league-name { font-weight:700; font-size:0.82rem; color:#fff; }
+        .league-sub { font-size:0.68rem; color:var(--text-subtle); }
 
         /* SEO ARTICLES & CONTENT BLOCK */
-        .seo-section { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:2rem 1.8rem; margin-bottom:2.5rem; }
-        .seo-section h2 { font-size:1.45rem; font-weight:900; color:#fff; margin-bottom:1rem; border-right:4px solid var(--primary); padding-right:0.75rem; }
-        .seo-section h3 { font-size:1.15rem; font-weight:800; color:var(--accent); margin:1.5rem 0 0.6rem; }
-        .seo-section p { font-size:0.95rem; line-height:2; color:#cbd5e1; margin-bottom:1rem; }
-        .seo-section a { color:var(--accent); font-weight:800; text-decoration:underline; }
-        .seo-section a:hover { color:var(--primary); }
+        .seo-section { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.75rem 1.5rem; margin-bottom:2rem; }
+        .seo-section h2 { font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:0.85rem; border-right:3px solid var(--primary); padding-right:0.65rem; }
+        .seo-section h3 { font-size:1.1rem; font-weight:700; color:#38bdf8; margin:1.25rem 0 0.5rem; }
+        .seo-section p { font-size:0.92rem; line-height:1.9; color:#cbd5e1; margin-bottom:0.85rem; }
+        .seo-section a { color:#38bdf8; font-weight:700; text-decoration:underline; }
+        .seo-section a:hover { color:#fff; }
 
         /* ARTICLES GRID */
-        .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem; margin-top:1.5rem; }
-        .article-card { background:rgba(0,0,0,0.25); border:1px solid var(--border); border-radius:12px; padding:1.25rem; transition:0.2s; display:flex; flex-direction:column; justify-content:space-between; }
-        .article-card:hover { border-color:var(--primary); transform:translateY(-2px); }
-        .article-title { font-size:1.05rem; font-weight:800; color:#fff; margin-bottom:0.6rem; line-height:1.4; }
-        .article-desc { font-size:0.85rem; color:var(--text-dim); line-height:1.7; margin-bottom:1rem; }
-        .article-link { font-size:0.85rem; font-weight:800; color:var(--primary); display:inline-flex; align-items:center; gap:5px; }
+        .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-top:1.25rem; }
+        .article-card { background:#0f172a; border:1px solid var(--border); border-radius:8px; padding:1.15rem; transition:0.15s ease; display:flex; flex-direction:column; justify-content:space-between; }
+        .article-card:hover { border-color:var(--border-light); }
+        .article-title { font-size:1rem; font-weight:700; color:#fff; margin-bottom:0.5rem; line-height:1.4; }
+        .article-desc { font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:0.85rem; }
+        .article-link { font-size:0.82rem; font-weight:700; color:#38bdf8; display:inline-flex; align-items:center; gap:4px; }
 
         /* FOOTER */
-        footer { background:var(--surface); border-top:1px solid var(--border); padding:2.5rem 1rem; text-align:center; margin-top:3.5rem; font-size:0.85rem; color:var(--text-dim); }
-        .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.2rem; flex-wrap:wrap; }
-        .footer-links a { color:var(--accent); text-decoration:none; font-weight:700; transition:0.2s; }
+        footer { background:var(--surface); border-top:1px solid var(--border); padding:2rem 1rem; text-align:center; margin-top:3rem; font-size:0.82rem; color:var(--text-muted); }
+        .footer-links { display:flex; justify-content:center; gap:1.25rem; margin-bottom:1rem; flex-wrap:wrap; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-weight:600; transition:0.15s ease; }
         .footer-links a:hover { color:#fff; }
-        .footer-seo-tagline { max-width:850px; margin:0 auto 1.5rem; font-size:0.8rem; line-height:1.8; color:#64748b; }
+        .footer-seo-tagline { max-width:850px; margin:0 auto 1.25rem; font-size:0.78rem; line-height:1.8; color:var(--text-subtle); }
 
         @media (max-width:640px) {
             .header-wrap { justify-content:center; text-align:center; }
             .nav-links { justify-content:center; }
             .match-teams { gap:0.2rem; }
-            .team-name { max-width:90px; font-size:0.85rem; }
+            .team-name { max-width:85px; font-size:0.82rem; }
         }
-    </style>
+        </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -204,7 +208,7 @@
             </div>
         </div>
 
-        <h2 class="section-title"><span>نتائج مباريات الأمس (2026-11-23)</span></h2><div class="matches-grid"><div class="match-card ended style-grid_classic" data-kickoff="2:30 PM" data-mins="870" data-status="ended">
+        <h2 class="section-title"><span>نتائج مباريات الأمس (2026-11-25)</span></h2><div class="matches-grid"><div class="match-card ended style-sofascore_pro" data-kickoff="2:30 PM" data-mins="870" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -214,25 +218,25 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/5244.png" alt="إسبانيا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">إسبانيا تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5276.png" alt="الإكوادور تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الإكوادور تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">15 - 0</div>
+                <div class="score-box">2 - 3</div>
                 <div class="time-box">2:30 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/88860.png" alt="فيجي تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">فيجي تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5287.png" alt="كوريا الجنوبية تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">كوريا الجنوبية تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر إسبانيا تحت 17 ضد فيجي تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الإكوادور تحت 17 ضد كوريا الجنوبية تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="2:30 PM" data-mins="870" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="2:30 PM" data-mins="870" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -242,25 +246,25 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/20553.png" alt="طاجيكستان تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">طاجيكستان تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/2337.png" alt="أوغندا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">أوغندا تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">0 - 4</div>
+                <div class="score-box">6 - 0</div>
                 <div class="time-box">2:30 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/5249.png" alt="كرواتيا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">كرواتيا تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/48897.png" alt="كاليدونيا الجديدة تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">كاليدونيا الجديدة تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر طاجيكستان تحت 17 ضد كرواتيا تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر أوغندا تحت 17 ضد كاليدونيا الجديدة تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="3:00 PM" data-mins="900" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="3:30 PM" data-mins="930" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -270,55 +274,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/5291.png" alt="أوزبكستان تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">أوزبكستان تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/48112.png" alt="هايتي تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">هايتي تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">6 - 2</div>
-                <div class="time-box">3:00 PM</div>
-                <div class="rel-countdown"></div>
-            </div>
-            <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/11240.png" alt="جامايكا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">جامايكا تحت 17</div>
-            </div>
-        </div>
-        <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر أوزبكستان تحت 17 ضد جامايكا تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
-                🎬 ملخص المباراة والنتيجة
-            </a>
-        </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="3:30 PM" data-mins="930" data-status="ended">
-        <div class="match-header">
-            <span class="m-tourn">🏆 كأس العالم تحت 17</span>
-            <div class="m-badges">
-                
-                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
-            </div>
-        </div>
-        <div class="match-teams">
-            <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/2332.png" alt="السنغال تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">السنغال تحت 17</div>
-            </div>
-            <div class="match-center">
-                <div class="score-box">9 - 0</div>
+                <div class="score-box">1 - 2</div>
                 <div class="time-box">3:30 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/47539.png" alt="كوبا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">كوبا تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5293.png" alt="السعودية تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">السعودية تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر السنغال تحت 17 ضد كوبا تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر هايتي تحت 17 ضد السعودية تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="3:45 PM" data-mins="945" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="3:30 PM" data-mins="930" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 دوري أبطال آسيا للنخبة</span>
+            <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -326,25 +302,53 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_321.png" alt="نيفتشي فرغانة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">نيفتشي فرغانة</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5274.png" alt="أوروغواي تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">أوروغواي تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">2 - 2</div>
+                <div class="score-box">0 - 3</div>
+                <div class="time-box">3:30 PM</div>
+                <div class="rel-countdown"></div>
+            </div>
+            <div class="team team-2">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5256.png" alt="فرنسا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">فرنسا تحت 17</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر أوروغواي تحت 17 ضد فرنسا تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+                🎬 ملخص المباراة والنتيجة
+            </a>
+        </div>
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="3:45 PM" data-mins="945" data-status="ended">
+        <div class="match-header">
+            <span class="m-tourn">🏆 دوري أبطال آسيا 2</span>
+            <div class="m-badges">
+                
+                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
+            </div>
+        </div>
+        <div class="match-teams">
+            <div class="team team-1">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/8596.png" alt="ناساف كارشي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">ناساف كارشي</div>
+            </div>
+            <div class="match-center">
+                <div class="score-box">1 - 0</div>
                 <div class="time-box">3:45 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_337.png" alt="الهلال السعودي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الهلال السعودي</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/68794.png" alt="الخالدية" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الخالدية</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر نيفتشي فرغانة ضد الهلال السعودي مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر ناساف كارشي ضد الخالدية مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="4:30 PM" data-mins="990" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="4:30 PM" data-mins="990" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -354,81 +358,25 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/5259.png" alt="إيطاليا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">إيطاليا تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5221.png" alt="اليونان تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">اليونان تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">2 - 1</div>
+                <div class="score-box">4 - 1</div>
                 <div class="time-box">4:30 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/2324.png" alt="كوت ديفوار تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">كوت ديفوار تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/23459.png" alt="قطر تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">قطر تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر إيطاليا تحت 17 ضد كوت ديفوار تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر اليونان تحت 17 ضد قطر تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="5:00 PM" data-mins="1020" data-status="ended">
-        <div class="match-header">
-            <span class="m-tourn">🏆 الدوري المصري</span>
-            <div class="m-badges">
-                
-                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
-            </div>
-        </div>
-        <div class="match-teams">
-            <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/8311.png" alt="وادي دجلة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">وادي دجلة</div>
-            </div>
-            <div class="match-center">
-                <div class="score-box">1 - 1</div>
-                <div class="time-box">5:00 PM</div>
-                <div class="rel-countdown"></div>
-            </div>
-            <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/8312.png" alt="الاتحاد السكندري" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الاتحاد السكندري</div>
-            </div>
-        </div>
-        <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر وادي دجلة ضد الاتحاد السكندري مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
-                🎬 ملخص المباراة والنتيجة
-            </a>
-        </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="5:00 PM" data-mins="1020" data-status="ended">
-        <div class="match-header">
-            <span class="m-tourn">🏆 الدوري المصري</span>
-            <div class="m-badges">
-                
-                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
-            </div>
-        </div>
-        <div class="match-teams">
-            <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/8308.png" alt="الجونة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الجونة</div>
-            </div>
-            <div class="match-center">
-                <div class="score-box">1 - 2</div>
-                <div class="time-box">5:00 PM</div>
-                <div class="rel-countdown"></div>
-            </div>
-            <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/8201.png" alt="الزمالك" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الزمالك</div>
-            </div>
-        </div>
-        <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الجونة ضد الزمالك مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
-                🎬 ملخص المباراة والنتيجة
-            </a>
-        </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="5:00 PM" data-mins="1020" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="4:30 PM" data-mins="990" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -438,25 +386,25 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/2320.png" alt="المغرب تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">المغرب تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/11236.png" alt="بنما تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">بنما تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">2 - 2</div>
-                <div class="time-box">5:00 PM</div>
+                <div class="score-box">1 - 4</div>
+                <div class="time-box">4:30 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/5280.png" alt="الصين تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الصين تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/2330.png" alt="مصر تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">مصر تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر المغرب تحت 17 ضد الصين تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر بنما تحت 17 ضد مصر تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="5:30 PM" data-mins="1050" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="5:30 PM" data-mins="1050" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -466,8 +414,8 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/87205.png" alt="فيتنام تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">فيتنام تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5217.png" alt="الدنمارك تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الدنمارك تحت 17</div>
             </div>
             <div class="match-center">
                 <div class="score-box">3 - 3</div>
@@ -475,16 +423,16 @@
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/11238.png" alt="نيوزيلندا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">نيوزيلندا تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5270.png" alt="الأرجنتين تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الأرجنتين تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر فيتنام تحت 17 ضد نيوزيلندا تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الدنمارك تحت 17 ضد الأرجنتين تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="5:30 PM" data-mins="1050" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="5:30 PM" data-mins="1050" data-status="ended">
         <div class="match-header">
             <span class="m-tourn">🏆 كأس العالم تحت 17</span>
             <div class="m-badges">
@@ -494,27 +442,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/2325.png" alt="مالي تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">مالي تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/5279.png" alt="أستراليا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">أستراليا تحت 17</div>
             </div>
             <div class="match-center">
-                <div class="score-box">2 - 1</div>
+                <div class="score-box">2 - 2</div>
                 <div class="time-box">5:30 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/5243.png" alt="بلجيكا تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">بلجيكا تحت 17</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/94966.png" alt="موزمبيق تحت 17" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">موزمبيق تحت 17</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر مالي تحت 17 ضد بلجيكا تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر أستراليا تحت 17 ضد موزمبيق تحت 17 مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="6:00 PM" data-mins="1080" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="6:00 PM" data-mins="1080" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 دوري أبطال آسيا للنخبة</span>
+            <span class="m-tourn">🏆 دوري أبطال آسيا 2</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -522,27 +470,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_316.png" alt="الشمال" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الشمال</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/10290.png" alt="الكويت" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الكويت</div>
             </div>
             <div class="match-center">
-                <div class="score-box">3 - 2</div>
+                <div class="score-box">1 - 2</div>
                 <div class="time-box">6:00 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_334.png" alt="الأهلي السعودي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الأهلي السعودي</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/8350.png" alt="الوحدة الإماراتي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الوحدة الإماراتي</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الشمال ضد الأهلي السعودي مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الكويت ضد الوحدة الإماراتي مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="6:00 PM" data-mins="1080" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="6:00 PM" data-mins="1080" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 دوري أبطال آسيا للنخبة</span>
+            <span class="m-tourn">🏆 دوري أبطال آسيا 2</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -550,27 +498,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_317.png" alt="تراکتورسازي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">تراکتورسازي</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/8276.png" alt="الفيصلي الأردني" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الفيصلي الأردني</div>
             </div>
             <div class="match-center">
-                <div class="score-box">1 - 5</div>
+                <div class="score-box">0 - 1</div>
                 <div class="time-box">6:00 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_318.png" alt="الوصل" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الوصل</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/7077.png" alt="الريان القطري" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الريان القطري</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر تراکتورسازي ضد الوصل مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الفيصلي الأردني ضد الريان القطري مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="6:00 PM" data-mins="1080" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="6:00 PM" data-mins="1080" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 دوري أبطال آسيا للنخبة</span>
+            <span class="m-tourn">🏆 دوري أبطال آسيا 2</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -578,27 +526,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_338.png" alt="العين الإماراتي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">العين الإماراتي</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/8344.png" alt="الجزيرة الإماراتي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">الجزيرة الإماراتي</div>
             </div>
             <div class="match-center">
-                <div class="score-box">1 - 1</div>
+                <div class="score-box">1 - 0</div>
                 <div class="time-box">6:00 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_320.png" alt="استقلال" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">استقلال</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/16533.png" alt="گل گهر سیرجان" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">گل گهر سیرجان</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر العين الإماراتي ضد استقلال مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الجزيرة الإماراتي ضد گل گهر سیرجان مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="8:00 PM" data-mins="1200" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="7:45 PM" data-mins="1185" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 الدوري المصري</span>
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -606,27 +554,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_335.png" alt="الأهلي المصري" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الأهلي المصري</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/1789.png" alt="سلافيا براغ" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">سلافيا براغ</div>
             </div>
             <div class="match-center">
-                <div class="score-box">0 - 2</div>
-                <div class="time-box">8:00 PM</div>
+                <div class="score-box">0 - 1</div>
+                <div class="time-box">7:45 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/22143.png" alt="بيراميدز" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">بيراميدز</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/133.png" alt="فياريال" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">فياريال</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الأهلي المصري ضد بيراميدز مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر سلافيا براغ ضد فياريال مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="8:00 PM" data-mins="1200" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="7:45 PM" data-mins="1185" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 الدوري الجزائري</span>
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -634,27 +582,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/8223.png" alt="شبيبة القبائل" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">شبيبة القبائل</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/50201.png" alt="صباح" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">صباح</div>
             </div>
             <div class="match-center">
-                <div class="score-box">1 - 1</div>
-                <div class="time-box">8:00 PM</div>
+                <div class="score-box">1 - 4</div>
+                <div class="time-box">7:45 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_323.png" alt="مولودية الجزائر" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">مولودية الجزائر</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/132.png" alt="برشلونة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">برشلونة</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر شبيبة القبائل ضد مولودية الجزائر مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر صباح ضد برشلونة مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="8:15 PM" data-mins="1215" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="8:15 PM" data-mins="1215" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 دوري أبطال آسيا للنخبة</span>
+            <span class="m-tourn">🏆 دوري أبطال آسيا 2</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -662,27 +610,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_311.png" alt="القوة الجوية" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">القوة الجوية</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/8941.png" alt="التعاون السعودي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">التعاون السعودي</div>
             </div>
             <div class="match-center">
-                <div class="score-box">2 - 1</div>
+                <div class="score-box">0 - 0</div>
                 <div class="time-box">8:15 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_312.png" alt="الغرافة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الغرافة</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/12184.png" alt="النهضة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">النهضة</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر القوة الجوية ضد الغرافة مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر التعاون السعودي ضد النهضة مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="8:15 PM" data-mins="1215" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 دوري أبطال آسيا للنخبة</span>
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -690,83 +638,27 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_339.png" alt="الاتحاد السعودي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">الاتحاد السعودي</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/224.png" alt="إنتر ميلان" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">إنتر ميلان</div>
             </div>
             <div class="match-center">
                 <div class="score-box">2 - 0</div>
-                <div class="time-box">8:15 PM</div>
-                <div class="rel-countdown"></div>
-            </div>
-            <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/sports-assets/teams/team_315.png" alt="باختاكور" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">باختاكور</div>
-            </div>
-        </div>
-        <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر الاتحاد السعودي ضد باختاكور مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
-                🎬 ملخص المباراة والنتيجة
-            </a>
-        </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="9:45 PM" data-mins="1305" data-status="ended">
-        <div class="match-header">
-            <span class="m-tourn">🏆 الدوري الإيطالي</span>
-            <div class="m-badges">
-                
-                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
-            </div>
-        </div>
-        <div class="match-teams">
-            <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/293.png" alt="مونزا" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">مونزا</div>
-            </div>
-            <div class="match-center">
-                <div class="score-box">3 - 0</div>
-                <div class="time-box">9:45 PM</div>
-                <div class="rel-countdown"></div>
-            </div>
-            <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/228.png" alt="فيورنتينا" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">فيورنتينا</div>
-            </div>
-        </div>
-        <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر مونزا ضد فيورنتينا مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
-                🎬 ملخص المباراة والنتيجة
-            </a>
-        </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
-        <div class="match-header">
-            <span class="m-tourn">🏆 الدوري الإسباني</span>
-            <div class="m-badges">
-                
-                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
-            </div>
-        </div>
-        <div class="match-teams">
-            <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/150.png" alt="ليفانتي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">ليفانتي</div>
-            </div>
-            <div class="match-center">
-                <div class="score-box">1 - 1</div>
                 <div class="time-box">10:00 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/156.png" alt="إلتشي" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">إلتشي</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/338.png" alt="شتوتجارت" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">شتوتجارت</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر ليفانتي ضد إلتشي مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر إنتر ميلان ضد شتوتجارت مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
-    </div><div class="match-card ended style-grid_classic" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
         <div class="match-header">
-            <span class="m-tourn">🏆 الدوري الإنجليزي</span>
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
             <div class="m-badges">
                 
                 <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
@@ -774,21 +666,161 @@
         </div>
         <div class="match-teams">
             <div class="team team-1">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/63.png" alt="برينتفورد" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">برينتفورد</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/1169.png" alt="كلوب بروج" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">كلوب بروج</div>
             </div>
             <div class="match-center">
-                <div class="score-box">4 - 0</div>
+                <div class="score-box">0 - 3</div>
                 <div class="time-box">10:00 PM</div>
                 <div class="rel-countdown"></div>
             </div>
             <div class="team team-2">
-                <div class="team-logo-wrap"><img src="https://yallashoot-today.us/wp-content/uploads/2026/11/107.png" alt="إيفرتون" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
-                <div class="team-name">إيفرتون</div>
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/108.png" alt="ليفربول" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">ليفربول</div>
             </div>
         </div>
         <div class="match-footer">
-            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر برينتفورد ضد إيفرتون مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر كلوب بروج ضد ليفربول مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+                🎬 ملخص المباراة والنتيجة
+            </a>
+        </div>
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
+        <div class="match-header">
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
+            <div class="m-badges">
+                
+                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
+            </div>
+        </div>
+        <div class="match-teams">
+            <div class="team team-1">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/480.png" alt="باريس سان جيرمان" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">باريس سان جيرمان</div>
+            </div>
+            <div class="match-center">
+                <div class="score-box">2 - 2</div>
+                <div class="time-box">10:00 PM</div>
+                <div class="rel-countdown"></div>
+            </div>
+            <div class="team team-2">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/225.png" alt="روما" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">روما</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر باريس سان جيرمان ضد روما مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+                🎬 ملخص المباراة والنتيجة
+            </a>
+        </div>
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
+        <div class="match-header">
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
+            <div class="m-badges">
+                
+                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
+            </div>
+        </div>
+        <div class="match-teams">
+            <div class="team team-1">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/1955.png" alt="شاختار دونيتسك" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">شاختار دونيتسك</div>
+            </div>
+            <div class="match-center">
+                <div class="score-box">0 - 1</div>
+                <div class="time-box">10:00 PM</div>
+                <div class="rel-countdown"></div>
+            </div>
+            <div class="team team-2">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/946.png" alt="فنربخشة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">فنربخشة</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر شاختار دونيتسك ضد فنربخشة مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+                🎬 ملخص المباراة والنتيجة
+            </a>
+        </div>
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
+        <div class="match-header">
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
+            <div class="m-badges">
+                
+                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
+            </div>
+        </div>
+        <div class="match-teams">
+            <div class="team team-1">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/134.png" alt="أتلتيكو مدريد" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">أتلتيكو مدريد</div>
+            </div>
+            <div class="match-center">
+                <div class="score-box">2 - 0</div>
+                <div class="time-box">10:00 PM</div>
+                <div class="rel-countdown"></div>
+            </div>
+            <div class="team team-2">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/1980.png" alt="فايكينج" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">فايكينج</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر أتلتيكو مدريد ضد فايكينج مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+                🎬 ملخص المباراة والنتيجة
+            </a>
+        </div>
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
+        <div class="match-header">
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
+            <div class="m-badges">
+                
+                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
+            </div>
+        </div>
+        <div class="match-teams">
+            <div class="team team-1">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/890.png" alt="سبورتنج لشبونة" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">سبورتنج لشبونة</div>
+            </div>
+            <div class="match-center">
+                <div class="score-box">2 - 2</div>
+                <div class="time-box">10:00 PM</div>
+                <div class="rel-countdown"></div>
+            </div>
+            <div class="team team-2">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/105.png" alt="مانشستر يونايتد" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">مانشستر يونايتد</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر سبورتنج لشبونة ضد مانشستر يونايتد مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
+                🎬 ملخص المباراة والنتيجة
+            </a>
+        </div>
+    </div><div class="match-card ended style-sofascore_pro" data-kickoff="10:00 PM" data-mins="1320" data-status="ended">
+        <div class="match-header">
+            <span class="m-tourn">🏆 دوري أبطال اوروبا</span>
+            <div class="m-badges">
+                
+                <span class="m-badge ended"><span class="badge-dot"></span><span class="badge-txt">انتهت المباراة</span></span>
+            </div>
+        </div>
+        <div class="match-teams">
+            <div class="team team-1">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/478.png" alt="ليل" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">ليل</div>
+            </div>
+            <div class="match-center">
+                <div class="score-box">2 - 1</div>
+                <div class="time-box">10:00 PM</div>
+                <div class="rel-countdown"></div>
+            </div>
+            <div class="team team-2">
+                <div class="team-logo-wrap"><img src="http://yallashootlive.app/wp-content/uploads/sports-assets/teams/331.png" alt="بايرن ميونخ" class="team-img" loading="lazy" onerror="this.style.opacity='0.3'"></div>
+                <div class="team-name">بايرن ميونخ</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            <a href="https://yallashoot-today.us/matches-today/" class="watch-btn ended-btn" title="بث مباشر ليل ضد بايرن ميونخ مباريات اليوم على يلا شوت توداي" target="_blank" rel="noopener">
                 🎬 ملخص المباراة والنتيجة
             </a>
         </div>
